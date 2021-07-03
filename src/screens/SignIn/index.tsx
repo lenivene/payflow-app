@@ -1,6 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 import { useTheme } from 'styled-components/native';
+import { useNavigation } from '@react-navigation/native';
 
 // Assets
 import addBoxLineIconSrc from "../../assets/addBoxLineIcon.png";
@@ -21,8 +22,13 @@ import {
 import { ButtonWithIcon } from '../../components/ButtonWithIcon';
 import { SignInButton } from '../../components/SignInButton';
 
-export const SignIn: React.FC = () => {
+export const SignInScreen: React.FC = () => {
   const { background } = useTheme();
+  const navigation = useNavigation();
+
+  const handleSignIn = async () => {
+    navigation.navigate('Home');
+  }
 
   return (
     <Container>
@@ -58,7 +64,7 @@ export const SignIn: React.FC = () => {
           boletos em um{`\n`}
           só lugar
         </Title>
-        <SignInButton>
+        <SignInButton onPress={handleSignIn}>
           Entrar com Google
         </SignInButton>
       </ContentContainer>

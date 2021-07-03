@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacityProps } from 'react-native';
+import { RectButtonProps } from 'react-native-gesture-handler';
 
 // Components
 import {
@@ -12,7 +12,7 @@ import {
 // Assets
 import iconSrc from '../../assets/googleIcon.png';
 
-export const SignInButton: React.FC<TouchableOpacityProps> = ({ children, ...rest }:any) => {
+export const SignInButton: React.FC<RectButtonProps> = ({ children, ...rest }:any) => {
   return (
     <Container {...rest}>
       <IconWrapper>
